@@ -78,7 +78,7 @@ export function BenchmarkConfig() {
   ])
   const [isAddingNew, setIsAddingNew] = useState(false)
 
-  const toggleExpanded = (id) => {
+  const toggleExpanded = (id: any) => {
     setBenchmarks(benchmarks.map((b) => (b.id === id ? { ...b, expanded: !b.expanded } : b)))
   }
 
@@ -343,13 +343,13 @@ export function BenchmarkConfig() {
   )
 }
 
-function TemplateCard({ title, description, metrics }) {
+function TemplateCard({ title, description, metrics }: any) {
   return (
     <button className="p-4 border border-border rounded-lg hover:bg-muted/30 transition-colors text-left bg-background">
       <h4 className="font-semibold text-foreground mb-1">{title}</h4>
       <p className="text-sm text-muted-foreground mb-3">{description}</p>
       <div className="space-y-1">
-        {metrics.map((metric, idx) => (
+        {metrics.map((metric: any, idx: any) => (
           <div key={idx} className="text-xs text-muted-foreground flex items-center">
             <span className="inline-block w-1 h-1 bg-primary rounded-full mr-2" />
             {metric}
